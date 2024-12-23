@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 export default {
   content: [
@@ -28,7 +29,7 @@ export default {
 
     extend: {
       fontFamily: {
-        serif: ['Poppins', 'serif'],
+        serif: ['var(--font-serif)', ...fontFamily.serif],
         sans: ['Quicksand', 'sans-serif']
       }
     },
