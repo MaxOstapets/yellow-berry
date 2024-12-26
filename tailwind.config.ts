@@ -17,20 +17,39 @@ export default {
       'very-dark-blue': '#3F51B5',
       'red': '#F44336',
       'pink': '#E91E63',
-      'gray': '#607D8B',
-      'dark-gray': '#3D4750',
+      'gray': {
+        1: '#607D8B',
+        2: '#F8F8FB',
+        3: '#777777',
+        4: '#3D4750'
+      },
+      // 'very-light-gray': '#F8F8FB',
+      // 'light-gray': '#777777',
+      // 'dark-gray': '#3D4750',
       'green': '#5EB595',
       'white': '#FFFFFF',
+      'black': '#000000',
+      'yellow': '#FF954D'
     },
     
     letterSpacing: {
-      'tightest': '0.48px'
+      '0.48': '0.48px',
+      '0.32': '0.32px',
+      '0.5': '0.5px',
+      '0.6': '0.6px'
     },
 
     extend: {
       fontFamily: {
         serif: ['var(--font-serif)', ...fontFamily.serif],
         sans: ['Quicksand', 'sans-serif']
+      },
+      spacing: {
+        '141': '141px',
+        '48': '48px',
+        '459': '459px',
+        '600': '600px',
+        'full': 'full'
       }
     },
   },
