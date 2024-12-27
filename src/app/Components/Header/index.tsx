@@ -8,6 +8,7 @@ import cubesIcon from '../../../../public/images/cubesIcon.png'
 import securityIcon from '../../../../public/images/securityIcon.png'
 import locationIcon from '../../../../public/images/loactionIcon.png'
 import Image from 'next/image';
+import NavItem from './NavItem';
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -31,11 +32,11 @@ const Header = () => {
                 <div className='flex justify-center items-center gap-3'>
                     <Image src={logo} alt="Logo" />
                     <div className="flex justify-center items-center flex-col">
-                        <p className='text-yellow text-xs font-medium tracking-0.48'>Yellow</p>
+                        <p className='text-yellow-1 text-xs font-medium tracking-0.48'>Yellow</p>
                         <p className='text-base text-black font-semibold leading-3'>Berry</p>
                     </div>
                 </div>
-                <div className="w-600 flex justify-center items-center bg-white text-gray-3 font-normal leading-5 rounded-xl border border-light-gray">
+                <div className="w-600 flex justify-center items-center bg-white text-gray-3 font-normal leading-5 rounded-xl border border-gray-3">
                     <p className='w-141 h-48 tracking-0.32 pl-5 flex items-center pr-9 border-r'>Vegetables</p>
                     <input type="text" placeholder='Search products...' className='w-full h-48 pl-5 rounded-r-lg' />
                     <Image src={searchIcon} alt='search' />
@@ -67,18 +68,18 @@ const Header = () => {
             <div className='flex justify-around items-center gap-9 bg-white w-full border-y-2 border-gray-2 py-2'>
                 <div className='flex justify-center items-center gap-12'>
                     <Image src={cubesIcon} alt='cubesIcon' />
-                    <ul className='flex justify-center items-center gap-8 text-gray-4'>
-                        <li className='font-medium text-base leading-7 tracking-0.48'>Home</li>
-                        <li className='font-medium text-base leading-7 tracking-0.48'>Categories</li>
-                        <li className='font-medium text-base leading-7 tracking-0.48'>Products</li>
-                        <li className='font-medium text-base leading-7 tracking-0.48'>Pages</li>
-                        <li className='font-medium text-base leading-7 tracking-0.48'>Blog</li>
+                    <ul className='flex justify-center items-center gap-8 text-gray-4'> 
+                        <NavItem link='Home' />
+                        <NavItem link='Categories' />
+                        <NavItem link='Products' />
+                        <NavItem link='Pages' />
+                        <NavItem link='Blog' />
                         <li className='font-medium text-base leading-7 tracking-0.48 flex justify-center items-center gap-1'><Image src={securityIcon} alt='securityIcon' />Offers</li>
                     </ul>
                 </div>
-                <div className='bg-white border-y-2 border-gray-2 w-44 h-12 flex justify-center items-center gap-2'>
+                <div className='bg-white border-2 border-gray-2 rounded-lg flex justify-center items-center gap-2'>
                     <Image src={locationIcon} alt='location' />
-                    <input type="text" placeholder='Surat' className='font-normal text-sm leading-5 tracking-0.32 text-gray-4' />
+                    <input type="text" placeholder='Surat' className='font-normal rounded-lg w-44 h-12 text-sm leading-5 tracking-0.32 text-gray-4' />
                 </div>
             </div>
         </header>

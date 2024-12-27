@@ -23,13 +23,13 @@ export default {
         3: '#777777',
         4: '#3D4750'
       },
-      // 'very-light-gray': '#F8F8FB',
-      // 'light-gray': '#777777',
-      // 'dark-gray': '#3D4750',
       'green': '#5EB595',
       'white': '#FFFFFF',
       'black': '#000000',
-      'yellow': '#FF954D'
+      'yellow': {
+        1: '#FF954D',
+        2: '#EDA957'
+      }
     },
     
     letterSpacing: {
@@ -42,7 +42,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ['var(--font-serif)', ...fontFamily.serif],
-        sans: ['Quicksand', 'sans-serif']
+        sans: ['var(--font-sans)', ...fontFamily.sans]
       },
       spacing: {
         '141': '141px',
@@ -50,6 +50,9 @@ export default {
         '459': '459px',
         '600': '600px',
         'full': 'full'
+      },
+      lineHeight: {
+        '60': '60px'
       }
     },
   },
