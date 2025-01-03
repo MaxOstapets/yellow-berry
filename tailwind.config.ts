@@ -9,21 +9,36 @@ export default {
   ],
   theme: {
     colors: {
-      'dark-blue': '#6C7FD8',
       'purple': '#8118D5',
-      'light-blue': '#5F6AF5',
       'dark-beige': '#F5885F',
       'birch': '#32DBE2',
-      'very-dark-blue': '#3F51B5',
-      'red': '#F44336',
-      'pink': '#E91E63',
+      'blue': {
+        1: '#F4F1FE',
+        2: '#3F51B5',
+        3: '#6C7FD8',
+        4: '#5F6AF5'
+      },
+      'red': {
+        1: '#FEF1F1',
+        2: '#F44336'
+      },
+      'pink': {
+        1: '#E91E63',
+        2: '#FBF9E4'
+      },
       'gray': {
         1: '#607D8B',
         2: '#F8F8FB',
         3: '#777777',
-        4: '#3D4750'
+        4: '#3D4750',
+        5: '#EAEAEA26',
+        6: '#D8CAB303',
+        7: '#686E7D'
       },
-      'green': '#5EB595',
+      'green': {
+        1: '#5EB595',
+        2: '#E1FCF2'
+      },
       'white': '#FFFFFF',
       'black': '#000000',
       'yellow': {
@@ -49,7 +64,9 @@ export default {
         '48': '48px',
         '459': '459px',
         '600': '600px',
-        'full': 'full'
+        'full': 'full',
+        '198': '198px',
+        '168': '168px'
       },
       lineHeight: {
         '60': '60px'
