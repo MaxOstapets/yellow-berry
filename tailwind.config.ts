@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-const { fontFamily } = require('tailwindcss/defaultTheme');
 
 export default {
   content: [
@@ -33,7 +32,8 @@ export default {
         4: '#3D4750',
         5: '#EAEAEA26',
         6: '#D8CAB303',
-        7: '#686E7D'
+        7: '#686E7D',
+        8: '#EEEEEE'
       },
       'green': {
         1: '#5EB595',
@@ -43,7 +43,8 @@ export default {
       'black': '#000000',
       'yellow': {
         1: '#FF954D',
-        2: '#EDA957'
+        2: '#EDA957',
+        3: '#FEA99A' 
       }
     },
     
@@ -56,8 +57,8 @@ export default {
 
     extend: {
       fontFamily: {
-        'serif': 'Quicksand, sans-serif',
-        'sans': 'Poppins, sans-serif'
+        'serif': '"Quicksand", sans-serif',
+        'sans': '"Poppins", sans-serif'
       },
       spacing: {
         '141': '141px',

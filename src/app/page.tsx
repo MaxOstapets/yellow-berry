@@ -1,15 +1,18 @@
 import stains from '../../public/images/stains.png'
 import fruits from '../../public/images/fruits.png'
-import Image from 'next/image'
 import currentSlide from '../../public/images/currentSlide.svg'
 import notActiveSlide from '../../public/images/notActiveSlide.svg'
-import LanguageItem from './Components/Pages/Main/LanguageItem'
-// import SlideItem from './Components/Pages/Main/SlideItem'
 import coldDrinksIcon from '../../public/images/coldDrinksIcon.png'
 import bakeryIcon from '../../public/images/bakeryIcon.png'
 import vegetablesIcon from '../../public/images/vegetablesIcon.png'
 import fruitsIcon from '../../public/images/fruitsIcon.png'
+import categoty from '../../public/images/category.svg'
+import juice from '../../public/images/juice.svg'
+import Image from 'next/image'
+import LanguageItem from './Components/Pages/Main/LanguageItem'
+// import SlideItem from './Components/Pages/Main/SlideItem'
 import CategoriesCard from './Components/Pages/Main/CategoriesCard'
+import ProductCard from './Components/ProductCard'
 
 //TODO fix slide problem
 
@@ -44,8 +47,43 @@ export default function Home() {
     },
   ]
 
+  const productCards = [
+    {
+      img: juice,
+      type: "Juice",
+      product: "Mixed Almond nuts juice Pack",
+      price: 39,
+      weight: 20,
+      availability: true
+    },
+    {
+      img: juice,
+      type: "Chocos",
+      product: "Mixed Fruits Chocolates Pack",
+      price: 20,
+      discount: 50,
+      pack: 20,
+      availability: true
+    },
+    {
+      img: juice,
+      type: "Fruits",
+      product: "Fresh Mango Slice Juice",
+      price: 45,
+      availability: false
+    },
+    {
+      img: juice,
+      type: "Juice",
+      product: "Organic Apple Juice Pack",
+      price: 15,
+      capacity: 100,
+      availability: true
+    },
+  ]
+
   return (
-    <>
+    <main className='flex flex-col gap-16'>
       <section className='flex flex-col bg-gradient-to-t from-gray-6 to-gray-5'>
         <div className='flex justify-center items-center'>
           <div className='flex flex-col'>
@@ -73,11 +111,38 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <section>
-        <div className='flex justify-center items-center gap-6'>
-          {categoryCardsItems.map((el) => <CategoriesCard link={el} key={el.category}/>)}
+      
+      <section className='flex items-end relative mx-40'>
+        <div className='relative'>
+          <Image src={categoty} alt='category' />
+          <span className='font-sans font-normal text-sm leading-5 tracking-0.32 text-white py-[6px] px-[15px] bg-black rounded-[15px] absolute top-5 left-[79%]'>50% Off</span>
+        </div>
+        <div className='flex justify-center items-center gap-6 absolute rounded-tl-[30px] p-7 left-[25%] bg-white'>
+          {categoryCardsItems.map((el) => <CategoriesCard link={el} key={el.category} />)}
         </div>
       </section>
-    </>
+
+      <section className='flex justify-center flex-col gap-7'>
+        <div className='flex justify-between items-center px-40'>
+          <div className='flex flex-col gap-[10px]'>
+            <span className='font-serif font-bold text-[25px] leading-[25px] tracking-0.48 text-gray-4 flex'>Day of the <p className='text-blue-3 ml-2'>Deal</p></span>
+            <span className='font-sans font-light text-sm leading-[18px] tracking-0.48 text-gray-7'>Don't wait. The time will never be just right.</span>
+          </div>
+          <div className='w-[240px] h-10 border rounded-[15px] border-gray-8 flex justify-center items-center gap-3'>
+            <span className='font-sans font-semibold text-[15px] leading-7 tracking-0.32 text-gray-4 flex gap-1 justify-center items-center'>891 <p className='font-normal text-sm'>Days</p></span>
+            <ul className='font-sans font-semibold text-[15px] leading-7 tracking-0.32 text-gray-4 flex justify-center items-center gap-4'>
+              <li>3</li>
+              <li>:</li>
+              <li>25</li>
+              <li>:</li>
+              <li>10</li>
+            </ul>  
+          </div>
+        </div>
+        <div className='flex justify-center items-center gap-6'>
+          {productCards.map((el) => <ProductCard link={el} key={el.product}/>)}
+        </div>
+      </section>
+    </main>
   )
 }
