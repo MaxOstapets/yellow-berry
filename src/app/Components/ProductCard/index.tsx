@@ -10,7 +10,8 @@ interface IProps {
     weight?: number,
     capacity?: number,
     pack?: number,
-    availability: boolean
+    availability: boolean,
+    status?: string 
 }
 
 interface ILink {
@@ -20,10 +21,11 @@ interface ILink {
 //TODO think about discount logic
 
 const ProductCard: React.FC<ILink> = ({ link }) => {
-    const { img, type, product, price, discount, weight, capacity, pack, availability } = link
+    const { img, type, product, price, discount, weight, capacity, pack, availability, status } = link
 
     return (
-        <div className='flex justify-start items-center flex-col rounded-[20px] w-[306px] h-[423px] bg-white border border-gray-8'>
+        <div className='flex justify-start items-center flex-col rounded-[20px] w-[306px] h-[423px] bg-white border border-gray-8 relative'>
+            <p className="font-sans font-medium text-sm leading-[21px] tracking-0.32 text-gray-3 rotate-90 top-5 left-1 absolute">{status}</p>
             <Image src={img} alt='product' className='w-full rounded-t-[20px]' />
             <div className='flex justify-center items-start flex-col pt-6 gap-2 border-t border-gray-8'>
                 <div className='flex justify-between items-center w-[306px] px-[21px]'>

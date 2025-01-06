@@ -9,6 +9,7 @@ export default {
   theme: {
     colors: {
       'purple': '#8118D5',
+      'beige': '#FBF2E5',
       'dark-beige': '#F5885F',
       'birch': '#32DBE2',
       'blue': {
@@ -23,7 +24,8 @@ export default {
       },
       'pink': {
         1: '#E91E63',
-        2: '#FBF9E4'
+        2: '#FBF9E4',
+        3: '#FFE8EE'
       },
       'gray': {
         1: '#607D8B',
@@ -33,13 +35,15 @@ export default {
         5: '#EAEAEA26',
         6: '#D8CAB303',
         7: '#686E7D',
-        8: '#EEEEEE'
+        8: '#EEEEEE',
+        9: '#E5E7EB'
       },
       'green': {
         1: '#5EB595',
         2: '#E1FCF2'
       },
       'white': '#FFFFFF',
+      'white-transparent': 'rgba(255, 255, 255, 0.9)',
       'black': '#000000',
       'yellow': {
         1: '#FF954D',
@@ -71,6 +75,9 @@ export default {
       },
       lineHeight: {
         '60': '60px'
+      },
+      textShadow: {
+        'testimonials': '5px 5px 5px rgba(17, 26, 36, 1)'
       }
     },
   },
