@@ -61,8 +61,8 @@ export default {
 
     extend: {
       fontFamily: {
-        'serif': '"Quicksand", sans-serif',
-        'sans': '"Poppins", sans-serif'
+        'serif': '"Poppins", sans-serif',
+        'sans': '"Quicksand", sans-serif',
       },
       spacing: {
         '141': '141px',

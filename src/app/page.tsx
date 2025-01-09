@@ -3,73 +3,29 @@ import stains from '../../public/images/stains.png'
 import fruits from '../../public/images/fruits.png'
 import currentSlide from '../../public/images/currentSlide.svg'
 import notActiveSlide from '../../public/images/notActiveSlide.svg'
-import coldDrinksIcon from '../../public/images/coldDrinksIcon.png'
-import bakeryIcon from '../../public/images/bakeryIcon.png'
-import vegetablesIcon from '../../public/images/vegetablesIcon.png'
-import fruitsIcon from '../../public/images/fruitsIcon.png'
 import categoty from '../../public/images/category.svg'
 import juice from '../../public/images/juice.svg'
-import freshFruits from '../../public/images/freshFruits.png'
-import snack from '../../public/images/snack.png'
 import vegetablesBg from '../../public/images/vegetablesBg.svg'
-import box from '../../public/images/box.png'
-import car from '../../public/images/car.png'
-import paymentSecure from '../../public/images/paymentSecure.png'
-import support from '../../public/images/support.png'
 import arrow from '../../public/images/arrow.png'
 import gardenWorker from '../../public/images/gardenWorker.svg'
 import localShopingIcon from '../../public/images/localShopIcon.png'
 import teamLeader from '../../public/images/teamLeader.svg'
-import plasticPeople from '../../public/images/plasticPeople.svg'
-import pumpkins from '../../public/images/pumpkins.svg'
-import apple from '../../public/images/apple.svg'
-import apples from '../../public/images/apples.svg'
-import backyardCouple from '../../public/images/backyardCouple.svg'
-import backyardView from '../../public/images/backyardView.svg'
-import tomatos from '../../public/images/tomatos.svg'
-import vegetablesBouquet from '../../public/images/vegetableBouquet.svg'
-import marketWorker from '../../public/images/marketWorker.svg'
-import cabbageDish from '../../public/images/cabbageDish.svg'
-import LanguageItem from './Components/Pages/Main/LanguageItem'
-// import SlideItem from './Components/Pages/Main/SlideItem'
-import CategoriesCard from './Components/Pages/Main/CategoriesCard'
-import ProductCard from './Components/ProductCard'
-import ShopCard from './Components/Pages/Main/ShopCard'
-import InfoCard from './Components/Pages/Main/InfoCard'
-import VendorCard from './Components/Pages/Main/VendorCard'
-import DateCard from './Components/Pages/Main/DateCard'
+import { DateCard, CategoriesCard, InfoCards, LanguageList, ShopCards, VendorCards, InstaImages } from '@components/Vidgets'
+import { Quicksand, Poppins } from 'next/font/google'
+import { ProductCard } from '@components/ProductCard'
+
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  weight: ["500", "700", "400", "300"]
+})
+
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["500", "700", "400", "300", "100", "200", "600", "800", "900"]
+})
+
 
 export default function Home() {
-  const languageItem = ["IN", "DR", "LI", "FB"]
-  //TODO fix slide problem
-  // const slideItem = [currentSlide, notActiveSlide]
-
-  const categoryCardsItems = [
-    {
-      category: "Cold Drinks",
-      count: 49,
-      img: coldDrinksIcon,
-      bgColor: 'bg-blue-1'
-    },
-    {
-      category: "Bakery",
-      count: 8,
-      img: bakeryIcon,
-      bgColor: 'bg-pink-2'
-    },
-    {
-      category: "Vegetables",
-      count: 485,
-      img: vegetablesIcon,
-      bgColor: 'bg-red-1'
-    },
-    {
-      category: "Fruits",
-      count: 291,
-      img: fruitsIcon,
-      bgColor: 'bg-green-2'
-    },
-  ]
 
   const productCards = [
     {
@@ -105,23 +61,6 @@ export default function Home() {
       availability: true,
       status: "NEW"
     },
-  ]
-
-  const shopCard = [
-    {
-      img: snack,
-      title: "Tasty Snack & Fast food",
-      description: "The flavour of something special",
-      bg: "bg-beige",
-      bgUrl: "bg-[url('../../public/images/snackBg.png')]"
-    },
-    {
-      img: freshFruits,
-      title: "Fresh Fruits & Vegetables",
-      description: "A healthy meal for every one",
-      bg: "bg-pink-3",
-      bgUrl: "bg-[url('../../public/images/freshFruitsBg.png')]"
-    }
   ]
 
   const newArrivals = [
@@ -197,111 +136,6 @@ export default function Home() {
     },
   ]
 
-  const infoCards = [
-    {
-      img: car,
-      title: "Free Shipping",
-      description: "Free shipping on all Us order or above $200"
-    },
-    {
-      img: support,
-      title: "24x7 Support",
-      description: "Contact us 24 hours a day, 7 days a week"
-    },
-    {
-      img: box,
-      title: "30 Days Return",
-      description: "Simply return it within 30 days for an exchange"
-    },
-    {
-      img: paymentSecure,
-      title: "Payment Secure",
-      description: "Contact us 24 hours a day, 7 days a week"
-    },
-  ]
-
-  const vendorCards = [
-    {
-      name: "Mira Fashion Pvt. Ltd.",
-      fruits: 5,
-      vegetables: 30,
-      snacks: 9,
-      sales: 587,
-      yellowColor: true,
-    },
-    {
-      name: "Eelna Fashion Pvt. Ltd.",
-      fruits: 8,
-      vegetables: 15,
-      snacks: 4,
-      sales: 428,
-    },
-    {
-      name: "Mario Fashion Pvt. Ltd.",
-      fruits: 16,
-      vegetables: 42,
-      snacks: 18,
-      sales: 1024,
-    },
-    {
-      name: "Maria Fashion Pvt. Ltd.",
-      fruits: 2,
-      vegetables: 10,
-      snacks: 3,
-      sales: 210,
-    },
-  ]
-
-  const dateCards = [
-    {
-      date: "June 30,2024 - organic",
-      description: "Marketing Guide: 5 Steps to Success.",
-      img: plasticPeople
-    },
-    {
-      date: "May 10,2023 - organic",
-      description: "Best way to solve business deal issue.",
-      img: pumpkins
-    },
-    {
-      date: "Jan 10,2022 - organic",
-      description: "Business ideas to grow your business.",
-      img: apple
-    },
-    {
-      date: "Feb 12,2022 - organic",
-      description: "31 customer stats know in 2020.",
-      img: apples
-    },
-  ]
-
-  const instaImages = [
-    {
-      img: cabbageDish,
-      key: 'cabbage dish'
-    },
-    {
-      img: backyardCouple,
-      key: 'backyard couple'
-    },
-    {
-      img: backyardView,
-      key: 'backyard view'
-    },
-    {
-      img: tomatos,
-      key: 'tomatos'
-    },
-    {
-      img: vegetablesBouquet,
-      key: 'vegetables bouquet'
-    },
-    {
-      img: marketWorker,
-      key: 'market worker'
-    }
-  ]
-
   return (
     <main className='flex flex-col gap-28'>
       <section className='flex flex-col bg-gradient-to-t from-gray-6 to-gray-5'>
@@ -310,7 +144,7 @@ export default function Home() {
             <p className='font-light text-lg leading-7 tracking-0.48 text-gray-3 font-sans'>Flat 30% Off</p>
             <div className='flex items-end flex-col'>
               <Image src={stains} alt="stainsIcon" />
-              <span className='font-serif font-bold text-5xl leading-60 tracking-0.48 text-gray-4 w-96 flex flex-wrap'>
+              <span className='font-sans font-bold text-5xl leading-60 tracking-0.48 text-gray-4 w-96 flex flex-wrap'>
                 Explore
                 <p className='text-yellow-2 pl-3'>Healthy</p>
                 & Fresh Fruits
@@ -321,9 +155,7 @@ export default function Home() {
           <Image src={fruits} alt='fruits' />
         </div>
         <div className='flex justify-between items-end w-96 pl-4'>
-          <ul className='flex justify-center items-center gap-3 flex-col-reverse'>
-            {languageItem.map((el) => <LanguageItem language={el} key={el} />)}
-          </ul>
+          <LanguageList />
           <ul className='flex justify-center items-center gap-1'>
             <li><Image src={currentSlide} alt='currentSlide' /></li>
             <li><Image src={notActiveSlide} alt='notActiveSlide' /></li>
@@ -337,9 +169,7 @@ export default function Home() {
           <Image src={categoty} alt='category' />
           <span className='font-sans font-normal text-sm leading-5 tracking-0.32 text-white py-[6px] px-[15px] bg-black rounded-[15px] absolute top-5 left-[79%]'>50% Off</span>
         </div>
-        <div className='flex justify-center items-center gap-6 absolute rounded-tl-[30px] p-7 left-[25%] bg-white'>
-          {categoryCardsItems.map((el) => <CategoriesCard link={el} key={el.category} />)}
-        </div>
+        <CategoriesCard />
       </section>
 
       <section className='flex justify-center flex-col gap-7'>
@@ -364,10 +194,8 @@ export default function Home() {
           {productCards.map((el) => <ProductCard link={el} key={el.product} />)}
         </div>
       </section>
-      {/* TODO fix bg trouble */}
-      <section className='flex justify-center items-center gap-6'>
-        {shopCard.map((el) => <ShopCard link={el} key={el.title} />)}
-      </section>
+
+      <ShopCards />
 
       <section className='relative'>
         <Image src={vegetablesBg} alt='vegateblesBg' />
@@ -394,9 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='flex justify-center items-center gap-6'>
-        {infoCards.map((el) => <InfoCard link={el} key={el.title} />)}
-      </section>
+      <InfoCards />
 
       <section className='flex justify-center items-center flex-col gap-10'>
         <div className='flex justify-center items-center flex-col gap-[10px]'>
@@ -411,15 +237,15 @@ export default function Home() {
               <Image src={localShopingIcon} alt='local shoping icon' className='border-[10px] border-white rounded-tl-[20px] bg-white absolute top-[429px] left-[426px]' />
             </div>
           </div>
-          <div className='flex justify-center items-center gap-6 flex-col'>
-            {vendorCards.map((el) => <VendorCard link={el} key={el.sales} />)}
-          </div>
+          <VendorCards />
         </div>
       </section>
 
       <section className='flex justify-center items-center'>
         {/* //TODO fix "Testimonials" */}
-        <div className='font-serif font-bold text-[42px] leading-[50px] -rotate-90 tracking-0.48 text-purple'>Testimonials</div>
+        {/* <div className='font-serif font-bold text-[42px] leading-[50px] -rotate-90 tracking-0.48 text-white'>Testimonials</div> */}
+        <div className='font-outline-2 text-white text-xl'>Testimonials</div>
+
         <div className='flex justify-center items-center gap-6'>
           <Image src={teamLeader} alt='team leader' />
           <div className='flex justify-start items-start flex-col gap-[11px]'>
@@ -433,14 +259,10 @@ export default function Home() {
       </section>
 
       <section className='flex justify-center items-center flex-col gap-20'>
-        <div className='flex justify-center items-center gap-6'>
-          {dateCards.map((el) => <DateCard link={el} key={el.date} />)}
-        </div>
+        <DateCard />
         <div className='relative'>
           <span className='absolute font-serif font-semibold text-[28px] leading-[33px] tracking-0.48 text-gray-4 flex justify-center items-center px-[30px] py-[14px] bg-white rounded-[30px] top-[36%] left-[44.5%]'>#Insta</span>
-          <div className='flex justify-center items-center gap-6'>
-            {instaImages.map((el) => <Image src={el.img} key={el.key} alt={el.key} />)}
-          </div>
+          <InstaImages />
         </div>
       </section>
     </main>

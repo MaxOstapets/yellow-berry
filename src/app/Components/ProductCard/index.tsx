@@ -1,5 +1,6 @@
 import { IoStarOutline, IoStarSharp } from "react-icons/io5";
 import Image, { StaticImageData } from "next/image";
+import { Quicksand, Poppins } from "next/font/google";
 
 interface IProps {
     img: StaticImageData,
@@ -18,9 +19,20 @@ interface ILink {
     link: IProps
 }
 
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  weight: ["500", "700", "400", "300"]
+})
+
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["500", "700", "400", "300", "100", "200", "600", "800", "900"]
+})
+  
+
 //TODO think about discount logic
 
-const ProductCard: React.FC<ILink> = ({ link }) => {
+export const ProductCard: React.FC<ILink> = ({ link }) => {
     const { img, type, product, price, discount, weight, capacity, pack, availability, status } = link
 
     return (
@@ -53,5 +65,3 @@ const ProductCard: React.FC<ILink> = ({ link }) => {
         </div>
     )
 }
-
-export default ProductCard

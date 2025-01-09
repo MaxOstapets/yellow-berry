@@ -4,10 +4,8 @@ interface ISlide {
     url: string
 }
 
-const SlideItem: React.FC<ISlide> = ({ url }) => {
+export const SlideItem: React.FC<ISlide> = ({ url }) => {
     return (
         <li><Image src={url} alt='slide' /></li>
     )
 }
-
-export default SlideItem
