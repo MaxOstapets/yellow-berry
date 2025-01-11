@@ -1,9 +1,9 @@
 import { IoStarOutline, IoStarSharp } from "react-icons/io5";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Quicksand, Poppins } from "next/font/google";
 
 interface IProps {
-    img: StaticImageData,
+    img: string,
     type: string,
     product: string,
     price: number,
@@ -38,7 +38,7 @@ export const ProductCard: React.FC<ILink> = ({ link }) => {
     return (
         <div className='flex justify-start items-center flex-col rounded-[20px] w-[306px] h-[423px] bg-white border border-gray-8 relative'>
             <p className="font-sans font-medium text-sm leading-[21px] tracking-0.32 text-gray-3 rotate-90 top-5 left-1 absolute">{status}</p>
-            <Image src={img} alt='product' className='w-full rounded-t-[20px]' />
+            <Image src={img} alt='product' className='rounded-t-[20px]' width={306} height={306} />
             <div className='flex justify-center items-start flex-col pt-6 gap-2 border-t border-gray-8'>
                 <div className='flex justify-between items-center w-[306px] px-[21px]'>
                     <p className='font-sans font-light text-[13px] leading-4 tracking-0.48 text-gray-3'>{type}</p>

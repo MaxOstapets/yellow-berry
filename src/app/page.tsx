@@ -1,16 +1,6 @@
 import Image from 'next/image'
-import stains from '../../public/images/stains.png'
-import fruits from '../../public/images/fruits.png'
-import currentSlide from '../../public/images/currentSlide.svg'
-import notActiveSlide from '../../public/images/notActiveSlide.svg'
-import categoty from '../../public/images/category.svg'
-import juice from '../../public/images/juice.svg'
-import vegetablesBg from '../../public/images/vegetablesBg.svg'
-import arrow from '../../public/images/arrow.png'
-import gardenWorker from '../../public/images/gardenWorker.svg'
-import localShopingIcon from '../../public/images/localShopIcon.png'
-import teamLeader from '../../public/images/teamLeader.svg'
-import { DateCard, CategoriesCard, InfoCards, LanguageList, ShopCards, VendorCards, InstaImages } from '@components/Vidgets'
+import { DateCard, InfoCards, LanguageList, ShopCards, VendorCards, InstaImages } from '@components/Vidgets'
+import { CategoriesCard } from '@components/CategoriesCard'
 import { Quicksand, Poppins } from 'next/font/google'
 import { ProductCard } from '@components/ProductCard'
 
@@ -29,7 +19,7 @@ export default function Home() {
 
   const productCards = [
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Juice",
       product: "Mixed Almond nuts juice Pack",
       price: 39,
@@ -37,7 +27,7 @@ export default function Home() {
       availability: true
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Chocos",
       product: "Mixed Fruits Chocolates Pack",
       price: 20,
@@ -46,14 +36,14 @@ export default function Home() {
       availability: true
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Fruits",
       product: "Fresh Mango Slice Juice",
       price: 45,
       availability: false
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Juice",
       product: "Organic Apple Juice Pack",
       price: 15,
@@ -65,7 +55,7 @@ export default function Home() {
 
   const newArrivals = [
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Snacks",
       product: "Ground Nuts Oil Pack",
       price: 15,
@@ -75,7 +65,7 @@ export default function Home() {
       status: "TREND"
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Juice",
       product: "Organic Litchi Juice Pack",
       price: 25,
@@ -84,7 +74,7 @@ export default function Home() {
       availability: true,
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Chips",
       product: "Crunchy Banana Chips",
       price: 1,
@@ -93,14 +83,14 @@ export default function Home() {
       availability: true,
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Chips",
       product: "Crunchy Potato Chips",
       price: 25,
       availability: false,
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Snacks",
       product: "Black Pepper Spice pack",
       price: 15,
@@ -109,7 +99,7 @@ export default function Home() {
       availability: true,
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Juice",
       product: "Small Cardamom Spice Pack",
       price: 25,
@@ -119,7 +109,7 @@ export default function Home() {
       status: "NEW"
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Chips",
       product: "Chilli Flakes Pack",
       price: 1,
@@ -128,7 +118,7 @@ export default function Home() {
       availability: true,
     },
     {
-      img: juice,
+      img: "/images/juice.svg",
       type: "Chips",
       product: "Tomato Ketchup Pack",
       price: 25,
@@ -138,12 +128,12 @@ export default function Home() {
 
   return (
     <main className='flex flex-col gap-28'>
-      <section className='flex flex-col bg-gradient-to-t from-gray-6 to-gray-5'>
+      <section className='flex flex-col bg-gray-2 w-full h-[780px]'>
         <div className='flex justify-center items-center'>
           <div className='flex flex-col'>
             <p className='font-light text-lg leading-7 tracking-0.48 text-gray-3 font-sans'>Flat 30% Off</p>
             <div className='flex items-end flex-col'>
-              <Image src={stains} alt="stainsIcon" />
+              <Image src="/images/stains.png" alt="stainsIcon" width={48} height={60}/>
               <span className='font-sans font-bold text-5xl leading-60 tracking-0.48 text-gray-4 w-96 flex flex-wrap'>
                 Explore
                 <p className='text-yellow-2 pl-3'>Healthy</p>
@@ -152,21 +142,21 @@ export default function Home() {
             </div>
             <button className='font-normal text-sm leading-7 tracking-0.48 text-gray-4 border border-gray-4 rounded-xl w-28 h-11 flex justify-center items-center mt-4'>Shop Now</button>
           </div>
-          <Image src={fruits} alt='fruits' />
+          <Image src="/images/fruits.png" alt='fruits' width={904} height={550}/>
         </div>
         <div className='flex justify-between items-end w-96 pl-4'>
           <LanguageList />
           <ul className='flex justify-center items-center gap-1'>
-            <li><Image src={currentSlide} alt='currentSlide' /></li>
-            <li><Image src={notActiveSlide} alt='notActiveSlide' /></li>
-            <li><Image src={notActiveSlide} alt='notActiveSlide' /></li>
+            <li><Image src="/images/currentSlide.svg" alt='currentSlide' width={30} height={16}/></li>
+            <li><Image src="/images/notActiveSlide.svg" alt='notActiveSlide' width={15} height={16}/></li>
+            <li><Image src="/images/notActiveSlide.svg" alt='notActiveSlide' width={15} height={16}/></li>
           </ul>
         </div>
       </section>
 
       <section className='flex items-end relative mx-40'>
         <div className='relative'>
-          <Image src={categoty} alt='category' />
+          <Image src="/images/category.svg" alt='category' width={525} height={525}/>
           <span className='font-sans font-normal text-sm leading-5 tracking-0.32 text-white py-[6px] px-[15px] bg-black rounded-[15px] absolute top-5 left-[79%]'>50% Off</span>
         </div>
         <CategoriesCard />
@@ -198,7 +188,7 @@ export default function Home() {
       <ShopCards />
 
       <section className='relative'>
-        <Image src={vegetablesBg} alt='vegateblesBg' />
+        <Image src="/images/vegetablesBg.svg" alt='vegateblesBg' width={1920} height={400}/>
         <div className='w-[400px] p-5 rounded-t-[30px] bg-white flex flex-col gap-4 absolute top-[120px] left-[900px]'>
           <div className='flex flex-col gap-1'>
             <p className='font-sans font-semibold text-xl leading-[26px] tracking-0.32 text-blue-3'>25% Off</p>
@@ -231,10 +221,10 @@ export default function Home() {
         </div>
         <div className='relative flex justify-center items-center gap-6'>
           <div className='flex'>
-            <Image src={gardenWorker} alt='garden worker' />
+            <Image src="/images/gardenWorker.svg" alt='garden worker' width={525} height={525}/>
             <div>
-              <Image src={arrow} alt='arrow' className='absolute top-[20px] left-[470px]' />
-              <Image src={localShopingIcon} alt='local shoping icon' className='border-[10px] border-white rounded-tl-[20px] bg-white absolute top-[429px] left-[426px]' />
+              <Image src="/images/arrow.png" alt='arrow' className='absolute top-[20px] left-[470px]' width={35} height={35} />
+              <Image src="/images/localShopIcon.png" alt='local shoping icon' className='border-[10px] border-white rounded-tl-[20px] bg-white absolute top-[429px] left-[426px]' width={100} height={100}/>
             </div>
           </div>
           <VendorCards />
@@ -242,12 +232,9 @@ export default function Home() {
       </section>
 
       <section className='flex justify-center items-center'>
-        {/* //TODO fix "Testimonials" */}
-        {/* <div className='font-serif font-bold text-[42px] leading-[50px] -rotate-90 tracking-0.48 text-white'>Testimonials</div> */}
-        <div className='font-outline-2 text-white text-xl'>Testimonials</div>
-
+        <div className='font-outline-2 font-serif font-bold text-[42px] leading-[50px] -rotate-90 tracking-0.48 text-white opacity-20'>Testimonials</div>
         <div className='flex justify-center items-center gap-6'>
-          <Image src={teamLeader} alt='team leader' />
+          <Image src="/images/teamLeader.svg" alt='team leader' width={283} height={283} />
           <div className='flex justify-start items-start flex-col gap-[11px]'>
             <div className='flex flex-col gap-[9px]'>
               <span className='font-serif font-bold text-xl leading-6 tracking-0.48 text-gray-4'>Jon deo</span>

@@ -3,9 +3,69 @@
 @tailwind utilities;
 @layer base {
     .font-outline-2 {
-      -webkit-text-stroke: 1px purple;
+      -webkit-text-stroke: 1px rgba(17, 26, 36, 1);
     }
     .font-outline-4 {
       -webkit-text-stroke: 4px black;
+    }
+
+    .custom-range {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 3px;
+      background: black; /* Чорна доріжка */
+      border-radius: 5px;
+      outline: none;
+      position: relative;
+    }
+  
+    /* Синя лінія заповнення */
+    .custom-range::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: blue; /* Синій колір заповнення */
+      border-radius: 5px;
+      width: 0%; /* Початкова ширина */
+      z-index: 1;
+      transition: width 0.1s ease-in-out;
+    }
+  
+    /* Кружечок повзунка */
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: blue; /* Синій кружечок */
+      border-radius: 50%; /* Для створення кола */
+      cursor: pointer;
+      position: relative;
+      z-index: 2; /* Щоб кружечок був поверх доріжки */
+      border: none;
+      margin-top: -6px; /* Центрування по вертикалі */
+    }
+  
+    .custom-range::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      background: blue;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      margin-top: -6px;
+    }
+  
+    .custom-range::-ms-thumb {
+      width: 15px;
+      height: 15px;
+      background: blue;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      margin-top: -6px;
     }
   }

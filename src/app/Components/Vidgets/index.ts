@@ -1,1 +1,1 @@
-export {DateCard, CategoriesCard, InfoCards, LanguageList, ShopCards, VendorCards, InstaImages} from "./Main"
+export {DateCard, InfoCards, LanguageList, ShopCards, VendorCards, InstaImages} from "./Main"

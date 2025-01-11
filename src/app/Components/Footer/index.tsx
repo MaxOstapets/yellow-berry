@@ -1,9 +1,18 @@
 import Image from "next/image";
-import logo from '../../../../public/images/logo.png';
-import googlePlay from '../../../../public/images/googlePlay.svg';
-import appStore from '../../../../public/images/appStore.svg';
 import BrandsList from "./BrandsList";
 import Column from "./Column";
+import { Quicksand, Poppins } from 'next/font/google'
+
+const quicksand = Quicksand({
+    subsets: ["latin"],
+    weight: ["500", "700", "400", "300"]
+})
+
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["500", "700", "400", "300", "100", "200", "600", "800", "900"]
+})
+
 
 const Footer = () => {
     const lists = [
@@ -31,11 +40,11 @@ const Footer = () => {
 
     const downloadApps = [
         {
-            title: googlePlay,
+            img: "/images/googlePlay.svg",
             key: "google play"
         },
         {
-            title: appStore,
+            img: "/images/appStore.svg",
             key: "app store"
         }
     ];
@@ -72,8 +81,27 @@ const Footer = () => {
         }
     ];
 
+    const socialMedias = [
+        {
+            img: "/images/facebook.png",
+            key: "facebook"
+        },
+        {
+            img: "/images/instagram.png",
+            key: "instagram"
+        },
+        {
+            img: "/images/twitter.png",
+            key: "twitter"
+        },
+        {
+            img: "/images/inIcon.png",
+            key: "in"
+        },
+    ]
+
     return (
-        <footer className="flex justify-center items-center flex-col mt-[100px] w-full">
+        <footer className="flex justify-center items-center flex-col pt-[100px] w-full">
             <section className="flex justify-center items-center flex-col gap-6 border-t border-gray-9 w-full pt-[50px]">
                 <span className="font-serif font-bold text-base leading-[19px] text-gray-4">Brands Directory</span>
                 <div className="grid grid-cols-2 gap-4">
@@ -82,11 +110,11 @@ const Footer = () => {
                     ))}
                 </div>
             </section>
-            <section className="flex justify-center items-start gap-6 border-t border-gray-8 pt-[51px] mt-[56px]">
-                <div className="w-[305px] flex justify-center items-center flex-col">
+            <section className="flex justify-center items-start gap-6 border-t border-gray-8 py-[50px] mt-[56px] relative">
+                <div className="w-[305px] flex justify-center items-start flex-col gap-[30px]">
                     <div className="flex justify-center items-start flex-col gap-4">
                         <div className="flex justify-center items-center gap-3">
-                            <Image src={logo} alt="Logo" />
+                            <Image src="/images/logo.png" alt="Logo" width={68} height={68} />
                             <div className="flex justify-center items-center flex-col">
                                 <p className="text-yellow-1 text-xs font-medium tracking-0.48">Yellow</p>
                                 <p className="text-base text-black font-semibold leading-3">Berry</p>
@@ -98,13 +126,23 @@ const Footer = () => {
                     </div>
                     <div className="flex justify-center items-center gap-[14px]">
                         {downloadApps.map((el) => (
-                            <Image src={el.title} key={el.key} alt="app" />
+                            <Image src={el.img} key={el.key} alt="app" width={140} height={42} />
                         ))}
                     </div>
                 </div>
                 {columns.map((el) => (
                     <Column title={el.title} item={el.items} key={el.title} />
                 ))}
+                <div className="flex justify-center items-center gap-[5px] top-[240px] left-[985px] absolute">
+                    {socialMedias.map((el) => <Image src={el.img} key={el.key} alt="app" width={30} height={30} />)}
+                </div>
+            </section>
+            <section className="flex py-3 justify-between px-[70px] border-t border-gray-8 w-full">
+                <pre className="font-serif font-normal text-sm leading-[26px] tracking-[1px] text-gray-7 flex items-end">Copyright © 2024 <p className="text-[15px] font-medium leading-7 tracking-0.48 text-yellow-2">BlackRise</p> all rights reserved.</pre>
+                <div className="flex justify-center items-center gap-[150px]">
+                    <Image src="/images/payment.png" alt="payment" width={335} height={30} />
+                    <Image src="/images/scrollUpArrow.png" alt="scrollUpArrow" width={38} height={38} />
+                </div>
             </section>
         </footer>
     );
