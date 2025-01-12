@@ -5,7 +5,12 @@ interface IProps {
     img: string,
     count: number,
     category: string,
-    bgColor: string
+    bgColor: string,
+}
+
+interface IPosition {
+    top?: string,
+    left: string
 }
 
 const quicksand = Quicksand({
@@ -13,7 +18,7 @@ const quicksand = Quicksand({
   weight: ["500", "700", "400", "300"]
 })
 
-export const CategoriesCard: React.FC = () => {
+export const CategoriesCard: React.FC<IPosition> = ({left, top}) => {
     const categoryCardsItems: IProps[] = [
         {
             category: "Cold Drinks",
@@ -41,7 +46,7 @@ export const CategoriesCard: React.FC = () => {
         },
     ]
     return (
-        <div className='flex justify-center items-center gap-6 absolute rounded-tl-[30px] p-7 left-[25%] bg-white'>
+        <div className={`flex justify-center items-center gap-6 absolute rounded-tl-[30px] p-7 ${left} ${top} bg-white`}>
             {categoryCardsItems.map((el) =>
                 <div className={`w-198 h-168 ${el.bgColor} flex justify-center items-center flex-col gap-4 rounded-3xl`} key={el.category}>
                     <Image src={el.img} width={50} height={50} alt='coldDrinks' />

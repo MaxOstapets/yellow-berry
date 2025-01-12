@@ -36,7 +36,7 @@ const Header = () => {
 
     return (
         <header className={`bg-gray-2 flex justify-center items-center flex-col font-sans`}>
-            <div className="text-sm leading-7 tracking-0.48 text-white flex justify-around items-center bg-gray-4 py-2 w-full">
+            <div className="text-sm leading-7 tracking-0.48 text-white flex justify-between px-[180px] items-center bg-gray-4 py-2 w-full">
                 <span>Flat 50% Off On Grocery Shop.</span>
                 <ul className='flex justify-center items-center gap-6'>
                     {heplItem.map((el) => <HelpItem link={el} key={el.text}/>)}

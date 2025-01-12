@@ -159,7 +159,7 @@ export default function Home() {
           <Image src="/images/category.svg" alt='category' width={525} height={525}/>
           <span className='font-sans font-normal text-sm leading-5 tracking-0.32 text-white py-[6px] px-[15px] bg-black rounded-[15px] absolute top-5 left-[79%]'>50% Off</span>
         </div>
-        <CategoriesCard />
+        <CategoriesCard left='left-[25%]'/>
       </section>
 
       <section className='flex justify-center flex-col gap-7'>
