@@ -1,21 +1,21 @@
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 
 interface IProps {
     url: string,
     count?: number,
-    img: StaticImageData
+    img: string
 }
 
 interface ILink {
     link: IProps
 }
 
-const NavAccount: React.FC<ILink> = ({ link }) => {
+export const NavAccount: React.FC<ILink> = ({ link }) => {
     const { img, url, count } = link
 
     return (
         <li className='flex justify-start items-center text-gray-4 flex-row gap-2'>
-            <Image src={img} alt='user' />
+            <Image src={img} alt='user' width={25} height={27}/>
             <div className='flex items-center flex-col'>
                 {count ?
                     <div className='flex items-center flex-col'>
@@ -35,5 +35,3 @@ const NavAccount: React.FC<ILink> = ({ link }) => {
         </li>
     )
 }
-
-export default NavAccount

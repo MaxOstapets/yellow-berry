@@ -3,6 +3,7 @@ import { Quicksand, Poppins } from 'next/font/google'
 import { ProductCard } from '@components/ProductCard'
 import { CategoriesCard } from "@components/CategoriesCard"
 import { Sidebar } from "@components/Sidebar"
+import { Path } from "@components/Path"
 import { IoIosArrowForward } from "react-icons/io";
 
 const quicksand = Quicksand({
@@ -97,14 +98,7 @@ const Category = () => {
     ]
     return (
         <section className="flex justify-start items-start flex-col">
-            <div className="w-full py-[25px] flex justify-between px-44 items-center bg-gray-2 border-y border-gray-8 mb">
-                <span className="font-sans font-bold text-base leading-[19px] tracking-0.48 text-gray-4">Shop Page</span>
-                <div className="flex justify-center items-center gap-[10px]">
-                    <span className="font-serif font-semibold text-sm leading-7 tracking-0.48 text-gray-7">Home</span>
-                    <Image src="/images/pathArrow.png" alt="pathArrow" width={7.75} height={7.23} />
-                    <span className="font-serif font-normal text-sm leading-7 tracking-0.48 text-gray-7">Shop Page</span>
-                </div>
-            </div>
+            <Path page="Shop Page" previousPage="Home" currentPage="Shop Page"/>
             <CategoriesCard left="left-[20%]" top="top-[40%]" />
             <div className="flex mt-64 gap-6 px-[100px]">
                 <Sidebar />

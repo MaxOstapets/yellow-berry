@@ -1,6 +1,6 @@
-import { IoStarOutline, IoStarSharp } from "react-icons/io5";
 import Image from "next/image";
 import { Quicksand, Poppins } from "next/font/google";
+import { RatingStars } from "../RatingStars";
 
 interface IProps {
     img: string,
@@ -42,13 +42,7 @@ export const ProductCard: React.FC<ILink> = ({ link }) => {
             <div className='flex justify-center items-start flex-col pt-6 gap-2 border-t border-gray-8'>
                 <div className='flex justify-between items-center w-[306px] px-[21px]'>
                     <p className='font-sans font-light text-[13px] leading-4 tracking-0.48 text-gray-3'>{type}</p>
-                    <ul className='flex justify-center items-center gap-1 text-yellow-3'>
-                        <li><IoStarSharp /></li>
-                        <li><IoStarSharp /></li>
-                        <li><IoStarSharp /></li>
-                        <li><IoStarSharp /></li>
-                        <li><IoStarOutline /></li>
-                    </ul>
+                    <RatingStars />
                 </div>
                 <span className='font-serif font-semibold text-[15px] leading-[18px] tracking-0.48 text-gray-4 pl-[21px]'>{product}</span>
                 <div className='flex justify-between items-center gap-[20px] w-[306px] px-[21px]'>
