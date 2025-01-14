@@ -4,6 +4,8 @@ import { RatingStars } from "@components/RatingStars"
 import Image from "next/image"
 import { Quicksand, Poppins } from "next/font/google";
 import { ProductCard } from "@components/ProductCard";
+import { Button } from "@components/Button";
+import { Title } from "@components/Title"
 
 const quicksand = Quicksand({
     subsets: ["latin"],
@@ -122,7 +124,7 @@ const Product = () => {
                                         <span className="font-serif font-normal text-sm leading-[35px] tracking-0.32 text-gray-3">1</span>
                                         <button className="font-serif font-normal text-xl leading-[30px] tracking-0.32 text-gray-3">+</button>
                                     </div>
-                                    <button className="font-serif font-normal text-sm leading-7 tracking-0.48 text-white px-[26px] py-[9px] border border-blue-3 rounded-[10px] bg-blue-3">View Cart</button>
+                                    <Button text="View Cart"/>
                                     <button className="w-12 h-12 border border-gray-8 rounded-[10px] flex justify-center items-center"><Image src="/images/heart.png" alt="heart" width={13} height={13} /></button>
                                     <button className="w-12 h-12 border border-gray-8 rounded-[10px] flex justify-center items-center"><Image src="/images/eye.png" alt="heart" width={13} height={13} /></button>
                                 </div>
@@ -151,10 +153,7 @@ const Product = () => {
                 </div>
             </div>
             <div className="flex justify-center items-center flex-col gap-10">
-                <div className="flex justify-center items-center flex-col gap-[10px]">
-                    <span className="font-sans font-bold text-[25px] leading-[25px] tracking-0.48 text-gray-4 flex justify-center items-center gap-2">Related <p className="text-blue-3">Product</p></span>
-                    <span className="font-serif font-light text-sm leading-[18px] tracking-0.48 text-gray-7">Browse The Collection of Top Products.</span>
-                </div>
+                <Title span="Related" titleParagraph="Product" paragraph="Browse The Collection of Top Products." width="w-fit" alignItems="items-center" textAlign="text-center"/>
                 <div className="flex justify-center items-center gap-6">
                     {relatedProduct.map((el) => <ProductCard link={el} key={el.product}/>)}
                 </div>

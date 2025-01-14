@@ -36,7 +36,8 @@ export default {
         6: '#D8CAB303',
         7: '#686E7D',
         8: '#EEEEEE',
-        9: '#E5E7EB'
+        9: '#E5E7EB',
+        10: '#9CA3AF'
       },
       'green': {
         1: '#5EB595',

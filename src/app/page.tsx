@@ -5,6 +5,7 @@ import { InfoCards } from '@components/InfoCards'
 import { Quicksand, Poppins } from 'next/font/google'
 import { ProductCard } from '@components/ProductCard'
 import { PersonPortfolio } from '@components/PersonPortfolio'
+import { Title } from '@components/Title'
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -12,8 +13,8 @@ const quicksand = Quicksand({
 })
 
 const poppins = Poppins({
-    subsets: ["latin"],
-    weight: ["500", "700", "400", "300", "100", "200", "600", "800", "900"]
+  subsets: ["latin"],
+  weight: ["500", "700", "400", "300", "100", "200", "600", "800", "900"]
 })
 
 
@@ -135,7 +136,7 @@ export default function Home() {
           <div className='flex flex-col'>
             <p className='font-light text-lg leading-7 tracking-0.48 text-gray-3 font-sans'>Flat 30% Off</p>
             <div className='flex items-end flex-col'>
-              <Image src="/images/stains.png" alt="stainsIcon" width={48} height={60}/>
+              <Image src="/images/stains.png" alt="stainsIcon" width={48} height={60} />
               <span className='font-sans font-bold text-5xl leading-60 tracking-0.48 text-gray-4 w-96 flex flex-wrap'>
                 Explore
                 <p className='text-yellow-2 pl-3'>Healthy</p>
@@ -144,32 +145,29 @@ export default function Home() {
             </div>
             <button className='font-normal text-sm leading-7 tracking-0.48 text-gray-4 border border-gray-4 rounded-xl w-28 h-11 flex justify-center items-center mt-4'>Shop Now</button>
           </div>
-          <Image src="/images/fruits.png" alt='fruits' width={904} height={550}/>
+          <Image src="/images/fruits.png" alt='fruits' width={904} height={550} />
         </div>
         <div className='flex justify-between items-end w-96 pl-4'>
           <LanguageList />
           <ul className='flex justify-center items-center gap-1'>
-            <li><Image src="/images/currentSlide.svg" alt='currentSlide' width={30} height={16}/></li>
-            <li><Image src="/images/notActiveSlide.svg" alt='notActiveSlide' width={15} height={16}/></li>
-            <li><Image src="/images/notActiveSlide.svg" alt='notActiveSlide' width={15} height={16}/></li>
+            <li><Image src="/images/currentSlide.svg" alt='currentSlide' width={30} height={16} /></li>
+            <li><Image src="/images/notActiveSlide.svg" alt='notActiveSlide' width={15} height={16} /></li>
+            <li><Image src="/images/notActiveSlide.svg" alt='notActiveSlide' width={15} height={16} /></li>
           </ul>
         </div>
       </section>
 
       <section className='flex items-end relative mx-40'>
         <div className='relative'>
-          <Image src="/images/category.svg" alt='category' width={525} height={525}/>
+          <Image src="/images/category.svg" alt='category' width={525} height={525} />
           <span className='font-sans font-normal text-sm leading-5 tracking-0.32 text-white py-[6px] px-[15px] bg-black rounded-[15px] absolute top-5 left-[79%]'>50% Off</span>
         </div>
-        <CategoriesCard left='left-[25%]'/>
+        <CategoriesCard left='left-[25%]' />
       </section>
 
       <section className='flex justify-center flex-col gap-7'>
         <div className='flex justify-between items-center px-40'>
-          <div className='flex flex-col gap-[10px]'>
-            <span className='font-serif font-bold text-[25px] leading-[25px] tracking-0.48 text-gray-4 flex'>Day of the <p className='text-blue-3 ml-2'>Deal</p></span>
-            <span className='font-sans font-light text-sm leading-[18px] tracking-0.48 text-gray-7'>Don't wait. The time will never be just right.</span>
-          </div>
+          <Title span='Day of the' titleParagraph='Deal' textAlign='text-left' width='w-fit' alignItems='items-start' paragraph="Don't wait. The time will never be just right." />
           <div className='w-[240px] h-10 border rounded-[15px] border-gray-8 flex justify-center items-center gap-3'>
             <span className='font-sans font-semibold text-[15px] leading-7 tracking-0.32 text-gray-4 flex gap-1 justify-center items-center'>891 <p className='font-normal text-sm'>Days</p></span>
             <ul className='font-sans font-semibold text-[15px] leading-7 tracking-0.32 text-gray-4 flex justify-center items-center gap-4'>
@@ -190,7 +188,7 @@ export default function Home() {
       <ShopCards />
 
       <section className='relative'>
-        <Image src="/images/vegetablesBg.svg" alt='vegateblesBg' width={1920} height={400}/>
+        <Image src="/images/vegetablesBg.svg" alt='vegateblesBg' width={1920} height={400} />
         <div className='w-[400px] p-5 rounded-t-[30px] bg-white flex flex-col gap-4 absolute top-[120px] left-[900px]'>
           <div className='flex flex-col gap-1'>
             <p className='font-sans font-semibold text-xl leading-[26px] tracking-0.32 text-blue-3'>25% Off</p>
@@ -202,10 +200,7 @@ export default function Home() {
 
       <section className='flex flex-col gap-10'>
         <div className='flex justify-between items-start px-[110px]'>
-          <div className='flex flex-col gap-[10px]'>
-            <span className='font-serif font-bold text-[25px] leading-[25px] tracking-0.48 text-gray-4 flex gap-2'>New <p className='text-blue-3'>Arrivals</p></span>
-            <p className='font-sans font-light text-sm leading-[18px] tracking-0.48 text-gray-7'>Shop online for new arrivals and get free shipping!</p>
-          </div>
+          <Title span='New' titleParagraph='Arrivals' width='w-fit' alignItems='items-start' textAlign='text-start' paragraph='Shop online for new arrivals and get free shipping!' />
           <pre className='font-sans font-medium text-base leading-7 tracking-0.48 text-gray-7 flex'>All  /  <p className='text-blue-3'>Snack & Spices</p>  /  Fruits  /  Vegetables</pre>
         </div>
         {/* TODO fix gap trouble */}
@@ -223,17 +218,17 @@ export default function Home() {
         </div>
         <div className='relative flex justify-center items-center gap-6'>
           <div className='flex'>
-            <Image src="/images/gardenWorker.svg" alt='garden worker' width={525} height={525}/>
+            <Image src="/images/gardenWorker.svg" alt='garden worker' width={525} height={525} />
             <div>
               <Image src="/images/arrow.png" alt='arrow' className='absolute top-[20px] left-[470px]' width={35} height={35} />
-              <Image src="/images/localShopIcon.png" alt='local shoping icon' className='border-[10px] border-white rounded-tl-[20px] bg-white absolute top-[429px] left-[426px]' width={100} height={100}/>
+              <Image src="/images/localShopIcon.png" alt='local shoping icon' className='border-[10px] border-white rounded-tl-[20px] bg-white absolute top-[429px] left-[426px]' width={100} height={100} />
             </div>
           </div>
           <VendorCards />
         </div>
       </section>
 
-      <PersonPortfolio name='Jon Deo' position='Team Leader' img='/images/teamLeader.svg'/>
+      <PersonPortfolio name='Jon Deo' position='Team Leader' img='/images/teamLeader.svg' />
 
       <section className='flex justify-center items-center flex-col gap-20'>
         <DateCard />
