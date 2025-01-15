@@ -1,6 +1,6 @@
 interface IProps {
     span: string,
-    titleParagraph: string,
+    titleParagraph?: string,
     paragraph: string,
     alignItems: string,
     width?: string,
