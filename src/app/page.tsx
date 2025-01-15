@@ -17,7 +17,6 @@ const poppins = Poppins({
   weight: ["500", "700", "400", "300", "100", "200", "600", "800", "900"]
 })
 
-
 export default function Home() {
 
   const productCards = [
@@ -203,8 +202,7 @@ export default function Home() {
           <Title span='New' titleParagraph='Arrivals' width='w-fit' alignItems='items-start' textAlign='text-start' paragraph='Shop online for new arrivals and get free shipping!' />
           <pre className='font-sans font-medium text-base leading-7 tracking-0.48 text-gray-7 flex'>All  /  <p className='text-blue-3'>Snack & Spices</p>  /  Fruits  /  Vegetables</pre>
         </div>
-        {/* TODO fix gap trouble */}
-        <div className='grid grid-cols-4 gap-[20px]'>
+        <div className='grid grid-cols-4 gap-[24px] mx-auto'>
           {newArrivals.map((el) => <ProductCard link={el} key={el.product} />)}
         </div>
       </section>

@@ -3,7 +3,7 @@ interface IProps {
     titleParagraph: string,
     paragraph: string,
     alignItems: string,
-    width: string,
+    width?: string,
     textAlign: string,
     mb?: string,
     mt?: string

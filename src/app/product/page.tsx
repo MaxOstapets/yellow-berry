@@ -6,6 +6,7 @@ import { Quicksand, Poppins } from "next/font/google";
 import { ProductCard } from "@components/ProductCard";
 import { Button } from "@components/Button";
 import { Title } from "@components/Title"
+import { Counter } from "@components/Counter";
 
 const quicksand = Quicksand({
     subsets: ["latin"],
@@ -119,11 +120,7 @@ const Product = () => {
                                     </ul>
                                 </div>
                                 <div className="flex justify-center items-center gap-1">
-                                    <div className="flex justify-center items-center px-2 py-[6px] border border-gray-8 rounded-[10px] gap-[18px]">
-                                        <button className="font-serif font-normal text-xl leading-[30px] tracking-0.32 text-gray-3">-</button>
-                                        <span className="font-serif font-normal text-sm leading-[35px] tracking-0.32 text-gray-3">1</span>
-                                        <button className="font-serif font-normal text-xl leading-[30px] tracking-0.32 text-gray-3">+</button>
-                                    </div>
+                                    <Counter />
                                     <Button text="View Cart"/>
                                     <button className="w-12 h-12 border border-gray-8 rounded-[10px] flex justify-center items-center"><Image src="/images/heart.png" alt="heart" width={13} height={13} /></button>
                                     <button className="w-12 h-12 border border-gray-8 rounded-[10px] flex justify-center items-center"><Image src="/images/eye.png" alt="heart" width={13} height={13} /></button>
